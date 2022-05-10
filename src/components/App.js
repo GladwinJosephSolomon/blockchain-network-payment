@@ -27,7 +27,7 @@ class App extends Component {
     const web3 = window.web3
     const accounts = await web3.eth.getAccounts()
     this.setState({ account: accounts[0] })
-    const daiTokenAddress = "0xCcC317ef816D53d2D132e1774a34116a5eC560A8" // Replace DAI Address Here
+    const daiTokenAddress = "0x1a174e1934Df39a70a0d53630b727AdB0B4f55Fc" // Replace DAI Address Here
     const daiTokenMock = new web3.eth.Contract(DaiTokenMock.abi, daiTokenAddress)
     this.setState({ daiTokenMock: daiTokenMock })
     const balance = await daiTokenMock.methods.balanceOf(this.state.account).call()
