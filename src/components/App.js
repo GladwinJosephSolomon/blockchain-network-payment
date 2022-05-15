@@ -95,7 +95,7 @@ class App extends Component {
                       placeholder="Amount"
                       required />
                   </div>
-                  <button type="submit" className="btn btn-primary btn-block">Send</button>
+                  <button type="submit" className="btn btn-primary btn-block" onClick={event =>  window.location.href='success.html'}>Send</button>
                 </form>
                 <table className="table">
                   <thead>
