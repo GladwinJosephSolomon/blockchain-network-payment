@@ -58,6 +58,7 @@ class App extends Component {
       <div>
         <nav className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
           <a
+            href="https://real-trado.vercel.app/"
             className="navbar-brand col-sm-3 col-md-2 mr-0"
           >
             Real Trado
@@ -67,7 +68,7 @@ class App extends Component {
           <div className="row">
             <main role="main" className="col-lg-12 d-flex text-center">
               <div className="content mr-auto ml-auto" style={{ width: "500px" }}>
-                <a>
+                <a href="https://real-trado.vercel.app/">
                   <img src={RealTrado} width="150" />
                 </a>
                 <h1>${this.state.balance} </h1>
@@ -95,7 +96,7 @@ class App extends Component {
                       placeholder="Amount"
                       required />
                   </div>
-                  <button type="submit" className="btn btn-primary btn-block" onClick={event =>  window.location.href='success.html'}>Send</button>
+                  <button type="submit" className="btn btn-primary btn-block">Send</button>
                 </form>
                 <table className="table">
                   <thead>
@@ -111,10 +112,17 @@ class App extends Component {
                           <td>{tx.returnValues.to}</td>
                           <td>{window.web3.utils.fromWei(tx.returnValues.value.toString(), 'Ether')}</td>
                         </tr>
-                      )
+                      );
                     }) }
                   </tbody>
                 </table>
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-block"
+                  onClick={(event) => (window.location.href = "success.html")}
+                >
+                  Finish Now
+                </button>
               </div>
             </main>
           </div>
